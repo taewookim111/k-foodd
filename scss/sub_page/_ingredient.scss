@@ -5,8 +5,8 @@
     h1{
         text-align: center;
         margin: 0 auto 100px;
-        font: bold 60px/1 "Nanum Myeongjo";
-        color: #888;
+        font: bold 70px/1 "Nanum Myeongjo";
+        color: #555;
     }
     .inner{
         width: 1180px;
@@ -26,12 +26,38 @@
             object-fit: cover;
             -webkit-mask-box-image: url(../img/sealeaf.svg);
             transform: rotate(-10deg);
+            opacity: 0;
+            z-index: 0;
+            transition: 0.5s;
+            cursor: pointer;
+            &.on{
+                opacity: 1;
+                z-index: 1;
+            }
+        }
+        .hidden{
+            position: absolute;
+            left: 30px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            object-fit: cover;
+            opacity: 0;
+            z-index: -1;
+            transition: 0.5s;
+            cursor: pointer;
+            &.on{
+                opacity: 1;
+                z-index: 1;
+            }
         }
         .text{
             padding: 20px;
+            right: 10px;
             transform: rotate(-30deg);
             font: bold 16px/1.5 "Noto Serif KR";
             color: #fff;
+            z-index: 2;
         }
         &:nth-of-type(2){
             margin: 500px auto;
@@ -40,6 +66,30 @@
             .mask{
                 -webkit-mask-box-image: url(../img/drumstick.svg);
                 transform: rotate(-5deg);
+                opacity: 0;
+                z-index: -1;
+                transition: 0.5s;
+                cursor: pointer;
+                &.on{
+                opacity: 1;
+                z-index: 1;
+            }
+            }
+            .hidden{
+                position: absolute;
+                left: 60%;
+                width: 400px;
+                height: 400px;
+                border-radius: 50%;
+                object-fit: cover;
+                opacity: 0;
+                z-index: -1;
+                transition: 0.5s;
+                cursor: pointer;
+                &.on{
+                    opacity: 1;
+                    z-index: 1;
+                }
             }
             .text{
                 transform: rotate(30deg);
@@ -55,13 +105,22 @@
                 transform: rotate(0deg);
                 left: 30px;
                 position: relative;
-            }  
+            } 
+            .hidden{
+                transform: rotate(-35deg);
+            }
             .text{
                 position: relative;
                 top: 50px;
                 left: 50px;
                 font: bold 14px/1.5 "Noto Serif KR";
             }
+        }
+        &:nth-of-type(4){
+            margin: 400px auto 200px;
+            transform: rotate(0deg);
+            width: 80%;
+            height: 80%;
         }
     }
 }
@@ -79,7 +138,7 @@
             .text{
                 padding: 20px;
                 transform: rotate(-30deg);
-                font: bold 1.2vw/1.6 "Noto Serif KR";
+                font: bold 1.1vw/1.6 "Noto Serif KR";
                 color: #fff;
             }
             &:nth-of-type(2){
